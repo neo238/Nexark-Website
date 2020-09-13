@@ -1,4 +1,3 @@
-
 <DOCTYPE html>
 
 <html ng-app="myApp">
@@ -48,6 +47,10 @@
 				$scope.About = "About";
 			});
 
+			app.controller("NewsController", function($scope) {
+				$scope.News = "News";
+			});
+
 			app.config(function($routeProvider) {
 
 				$routeProvider
@@ -67,6 +70,11 @@
 					controller  : 'GamesController'
 				})
 
+				.when('/news', {
+					templateUrl : 'pages/news.html',
+					controller  : 'NewsController'
+				})
+
 				.otherwise({redirectTo: '/'});
 
 			});
@@ -80,6 +88,7 @@
 		<div class="sidenav">
 			<a href="#/">Home</a>
 			<a href="#/games">Games</a>
+			<a href="#/news">News</a>
 			<a href="#/about">About us</a>
 		</div>
 
@@ -129,23 +138,46 @@
 
 			</script>
 
+			<!--News-->
+			<script type="text/ng-template" id="pages/news.html">
+
+				<h4>News & Information</h4>
+				Here you can find news and information about Nexark's games.<br>
+				Sometimes news is posted on the blog.
+				<hr>
+
+				<p>13/9/2020 - Sug Simulator & Random number game added.</p>
+
+				<hr>
+
+				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
+				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small>
+
+			</script>
+
 			<!--Games-->
 			<script type="text/ng-template" id="pages/games.html">
 
 				<h4>See all games made by Nexark</h4>
+				You can suggest ideas for a game if you want.
 
-				<br>
+				<br><br>
 
-				<a href="#">Random Number Game</a><br>
-				<small>Compete with a bot and see who scores the most!</small>
-
+				<a href="https://random-number-game.bob8552.repl.co">Random Number Game</a><br>
+				<small>Compete with a bot and see who scores the most! by Bob8552</small>
+				
+				<br><br>
+				
+				<a href="https://sug-simulator.bob8552.repl.run/">Sug Simulator</a><br>
+				<small>Research particles at a facility! by Bob and Drags</small>
+			
 			</script>
 
 			<!--Make the view-->
 			<div ng-view></div>
 
 			<hr>
-			<footer>Nexark, Inc © 2020</footer>
+			<footer><small>Nexark, Inc © 2020</small></footer>
 
 		</div>
 
