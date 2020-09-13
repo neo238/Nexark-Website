@@ -1,0 +1,154 @@
+
+<DOCTYPE html>
+
+<html ng-app="myApp">
+
+	<head>
+
+		<!--Meta-->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!--Embed META-->
+		<meta property="og:site_name" content="Nexark">
+		<meta property="og:url" content="https://nexark.bob8552.repl.co/"> <!--URL must be changed-->
+		<meta property="og:title" content="Nexark website">
+		<meta property="og:description" content="Nexark is a group which makes small, fun HTML games and posts them on their website.">
+		<meta property="og:type" content="website">
+		<meta name="og:image" itemprop="image" content="/images/nexark.png">
+
+		<!--Title-->
+		<title>Nexark</title>
+
+		<!--Resources-->
+		<link rel="stylesheet" href="/style.css"></link>
+		<script src="/app.js"></script>
+    <link rel="shortcut icon" href="images/nexark.png" type="image/x-icon">
+    <link rel="icon" href="images/nexark.png" type="image/x-icon">
+
+
+		<!--Packages-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+
+		<!--Angular.js-->
+		<script type="text/javascript">
+			var app = angular.module("myApp", ['ngRoute']);
+
+			app.controller("HomeController", function($scope) {
+					$scope.Home = "Home";
+			});
+
+			app.controller("GamesController", function($scope) {
+					$scope.Games = "Games";
+			});
+
+			app.controller("AboutController", function($scope) {
+				$scope.About = "About";
+			});
+
+			app.config(function($routeProvider) {
+
+				$routeProvider
+
+				.when('/', {
+					templateUrl : 'pages/home.html',
+					controller  : 'HomeController'
+				})
+
+				.when('/about', {
+					templateUrl : 'pages/about.html',
+					controller  : 'AboutController'
+				})
+
+				.when('/games', {
+					templateUrl : 'pages/games.html',
+					controller  : 'GamesController'
+				})
+
+				.otherwise({redirectTo: '/'});
+
+			});
+		</script>
+
+	</head>
+
+	<body>
+
+		<!-- Side navigation -->
+		<div class="sidenav">
+			<a href="#/">Home</a>
+			<a href="#/games">Games</a>
+			<a href="#/about">About us</a>
+		</div>
+
+		<!-- Page content -->
+		<div class="main">
+			
+			<!--Navbar-->
+			<nav role="navigation" class="navbar navbar-light bg-light navbar-expand-lg sticky" id="navbarSupportedContent">
+
+				<!--Main Badge-->
+				<a class="navbar-brand" href="#/">
+					<img src="images/nexark.png" width="30" height="30" loading="lazy"/>
+					Nexark
+				</a>
+
+				<!--Left entries-->
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav ml-auto">
+						<a class="nav-item nav-link" href="https://nexark-blog.bob8552.repl.co/">Blog</a>
+					</div>
+				</div>
+
+			</nav>
+			<hr>
+
+			<!--VIEWS-->
+
+			<!--Home-->
+			<script type="text/ng-template" id="pages/home.html">
+
+				<h4>Welcome!</h4>
+				Feel free to click the links on the overhead bar or on the sidebar.
+				<br><br>
+				<small>Confused? Why not check out our games <a href="#/games">here</a></small>
+
+			</script>
+
+			<!--About us-->
+			<script type="text/ng-template" id="pages/about.html">
+
+				<h4>About us</h4>
+				Nexark is a group which makes small, fun HTML games and posts them on their website.<br>
+				We are also a community of developers and artists.
+				<br><br>
+				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
+				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small>
+
+			</script>
+
+			<!--Games-->
+			<script type="text/ng-template" id="pages/games.html">
+
+				<h4>See all games made by Nexark</h4>
+
+				<br>
+
+				<a href="#">Random Number Game</a><br>
+				<small>Compete with a bot and see who scores the most!</small>
+
+			</script>
+
+			<!--Make the view-->
+			<div ng-view></div>
+
+			<hr>
+			<footer>Nexark, Inc © 2020</footer>
+
+		</div>
+
+	</body>
+
+</html>
