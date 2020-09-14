@@ -1,6 +1,6 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 
-<html ng-app="myApp">
+<html>
 
 	<head>
 
@@ -22,9 +22,7 @@
 		<!--Resources-->
 		<link rel="stylesheet" href="/style.css"></link>
 		<script src="/app.js"></script>
-    <link rel="shortcut icon" href="images/nexark.png" type="image/x-icon">
-    <link rel="icon" href="images/nexark.png" type="image/x-icon">
-
+		<link rel="icon" href="/images/nexark.png">
 
 		<!--Packages-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -36,11 +34,11 @@
 			var app = angular.module("myApp", ['ngRoute']);
 
 			app.controller("HomeController", function($scope) {
-					$scope.Home = "Home";
+				$scope.Home = "Home";
 			});
 
 			app.controller("GamesController", function($scope) {
-					$scope.Games = "Games";
+				$scope.Games = "Games";
 			});
 
 			app.controller("AboutController", function($scope) {
@@ -82,7 +80,7 @@
 
 	</head>
 
-	<body>
+	<body ng-app="myApp">
 
 		<!-- Side navigation -->
 		<div class="sidenav">
@@ -146,7 +144,8 @@
 				Sometimes news is posted on the blog.
 				<hr>
 
-				<p>13/9/2020 - Sug Simulator & Random number game added.</p>
+				<p>13/9/2020 - Sug Simulator & Random number game added.</p><br>
+				<p>14/9/2020 - Fighting simulator added.</p>
 
 				<hr>
 
@@ -169,7 +168,12 @@
 				<br><br>
 				
 				<a href="https://sug-simulator.bob8552.repl.run/">Sug Simulator</a><br>
-				<small>Research particles at a facility! by Bob and Drags</small>
+				<small>Research particles at a facility! by Bob8552 and Drags890</small>
+
+				<br><br>
+				
+				<a href="https://fighting-game.bob8552.repl.co/">Fighting simulator</a><br>
+				<small>Fight at different difficulties! by Bob8552</small>
 			
 			</script>
 
