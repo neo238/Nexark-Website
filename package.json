@@ -13,6 +13,7 @@
   "dependencies": {
     "@replit/database": "^2.0.0",
     "env": "0.0.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
   }
 }

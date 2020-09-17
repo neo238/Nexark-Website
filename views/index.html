@@ -28,7 +28,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
-
+		<script defer src="https://nexark.bob8552.repl.co/socket.io/socket.io.js"></script>
 		<!--Angular.js-->
 		<script type="text/javascript">
 			var app = angular.module("myApp", ['ngRoute']);
@@ -47,6 +47,10 @@
 
 			app.controller("NewsController", function($scope) {
 				$scope.News = "News";
+			});
+
+			app.controller("ChatController", function($scope) {
+				$scope.News = "Chat";
 			});
 
 			app.config(function($routeProvider) {
@@ -73,6 +77,11 @@
 					controller  : 'NewsController'
 				})
 
+				.when('/chat', {
+					templateUrl : 'pages/chat.html',
+					controller  : 'ChatController'
+				})
+
 				.otherwise({redirectTo: '/'});
 
 			});
@@ -87,6 +96,7 @@
 			<a href="#/">Home</a>
 			<a href="#/games">Games</a>
 			<a href="#/news">News</a>
+			<a href="#/chat" onclick="startChat()">Chat</a>
 			<a href="#/about">About us</a>
 		</div>
 
@@ -181,6 +191,17 @@
 				<a href="https://sug-simulator.bob8552.repl.run/">Sug Simulator</a><br>
 				<small>Research particles at a facility! by Bob8552 and Drags890</small>
 			
+			</script>
+
+			<script type="text/ng-template" id="pages/chat.html">
+
+				<div id="message-container"></div><br>
+				<form id="send-container">
+					<input type="text" id="message-input">
+					<button type="submit" id="send-button">Send</button><br><br>
+				</form>
+				<small style="font-style:italic;">Make sure your message is appropriate! [Warning: reloading will break the chat.]</small>
+
 			</script>
 
 			<!--Make the view-->
