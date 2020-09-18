@@ -7,6 +7,7 @@ window.addEventListener("load", () => {
 
 //Start up the chat.
 function startChat() {
+	document.getElementById("startct").hidden = true;
 	setTimeout(() => {
 		const socket = io('https://nexark.bob8552.repl.co/');
 		const messageContainer = document.getElementById('message-container');

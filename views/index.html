@@ -96,7 +96,7 @@
 			<a href="#/">Home</a>
 			<a href="#/games">Games</a>
 			<a href="#/news">News</a>
-			<a href="#/chat" onclick="startChat()">Chat</a>
+			<a href="#/chat">Chat</a>
 			<a href="#/about">About us</a>
 		</div>
 
@@ -142,7 +142,8 @@
 				We are also a community of developers and artists.
 				<br><br>
 				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
-				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small>
+				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small><br>
+				<small>Or, head over to the chat section!</small>
 
 			</script>
 
@@ -161,7 +162,8 @@
 				<hr>
 
 				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
-				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small>
+				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small><br>
+				<small>Or, head over to the chat section!</small>
 
 			</script>
 
@@ -194,14 +196,13 @@
 			</script>
 
 			<script type="text/ng-template" id="pages/chat.html">
-
+				<button onclick="startChat()" id="startct">Start chat</button>
 				<div id="message-container"></div><br>
 				<form id="send-container">
 					<input type="text" id="message-input">
 					<button type="submit" id="send-button">Send</button><br><br>
 				</form>
-				<small style="font-style:italic;">Make sure your message is appropriate! [Warning: reloading will break the chat.]</small>
-
+				<small style="font-style:italic;">Make sure your message and username is appropriate!</small>
 			</script>
 
 			<!--Make the view-->
