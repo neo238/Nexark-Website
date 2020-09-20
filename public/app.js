@@ -1,9 +1,35 @@
 // Event listeners
+var NexarkP = 0;
 
 //On Load
 window.addEventListener("load", () => {
 	console.log("--Ready & Loaded!--");
+
+	if (localStorage.getItem('nexarkp')) {
+
+		NexarkP = parseInt(localStorage.getItem('nexarkp'), 10);
+
+	} else {
+
+		localStorage.setItem('nexarkp', NexarkP);
+
+	};
+
 });
+
+function addPoints() {
+
+	NexarkP++;
+	localStorage.setItem('nexarkp', NexarkP);
+
+}
+
+function redirect(p) {
+
+	addPoints();
+	location.assign(p);
+
+}
 
 //Start up the chat.
 function startChat() {
