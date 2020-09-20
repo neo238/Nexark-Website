@@ -31,6 +31,8 @@ function redirect(p) {
 
 }
 
+var nxp = NexarkP;
+
 //Start up the chat.
 function startChat() {
 	document.getElementById("startct").hidden = true;

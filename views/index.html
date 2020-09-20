@@ -50,7 +50,7 @@
 			});
 
 			app.controller("PointsController", function($scope) {
-				$scope.points = NexarkP;
+				$scope.points = localStorage.getItem("nexarkp");
 			});
 
 			app.controller("ChatController", function($scope) {
@@ -151,6 +151,8 @@
 				Nexark is a group which makes small, fun HTML games and posts them on their website.<br>
 				We are also a community of developers and artists.
 				<br><br>
+				<iframe src="https://discord.com/widget?id=752090470087131236&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+				<br><br>
 				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
 				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small><br>
 				<small>Or, head over to the chat section!</small>
@@ -207,7 +209,6 @@
 				<h6>Sug Simulator</h6>
 				<p>Research particles at a facility! by Bob8552 and Drags890</p>
 				<button onclick="redirect('https://sug-simulator.bob8552.repl.run/')">Play</button>
-				
 			
 			</script>
 
@@ -227,7 +228,7 @@
 				<p>You can earn Nexark points by visiting our games!</p><br>
 
 				<p>Points</p>
-				<p id="points">{{ points }}</p>
+				<p id="points">{{ points || "0" }}</p>
 
 			</script>
 
