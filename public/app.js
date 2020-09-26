@@ -1,37 +1,14 @@
 // Event listeners
-var NexarkP = 0;
-
 //On Load
 window.addEventListener("load", () => {
 	console.log("--Ready & Loaded!--");
-
-	if (localStorage.getItem('nexarkp')) {
-
-		NexarkP = parseInt(localStorage.getItem('nexarkp'), 10);
-
-	} else {
-
-		localStorage.setItem('nexarkp', NexarkP);
-
-	};
-
 });
 
-function addPoints() {
+function redirect(r) {
 
-	NexarkP++;
-	localStorage.setItem('nexarkp', NexarkP);
-
-}
-
-function redirect(p) {
-
-	addPoints();
-	location.assign(p);
+	location.assign(r);
 
 }
-
-var nxp = NexarkP;
 
 //Start up the chat.
 function startChat() {
@@ -62,6 +39,7 @@ function startChat() {
 			e.preventDefault();
 			const message = messageInput.value;
 			if (message === "" || message === " ") return appendMessage("[SYSTEM]: You cannot send an empty message!");
+			if (message.length > 50) return appendMessage("[SYSTEM]: Your message is too big!");
 			appendMessage(`[${name} (You)]: ${message}`);
 			socket.emit('send-chat-message', message);
 			messageInput.value = '';

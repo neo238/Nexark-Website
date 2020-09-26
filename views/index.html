@@ -49,10 +49,6 @@
 				$scope.News = "News";
 			});
 
-			app.controller("PointsController", function($scope) {
-				$scope.points = localStorage.getItem("nexarkp");
-			});
-
 			app.controller("ChatController", function($scope) {
 				$scope.Chat = "Chat";
 			});
@@ -86,11 +82,6 @@
 					controller  : 'ChatController'
 				})
 
-				.when('/points', {
-					templateUrl : 'pages/points.html',
-					controller  : 'PointsController'
-				})
-
 				.otherwise({redirectTo: '/'});
 
 			});
@@ -103,15 +94,16 @@
 		<!-- Side navigation -->
 		<div class="sidenav">
 			<a href="#/">Home</a>
-			<a href="#/games">Games</a>
+			<a href="#/games">Games <image src="/images/games.png" width="30"></image></a>
 			<a href="#/news">News</a>
 			<a href="#/chat">Chat</a>
-			<a href="#/points">Points</a>
-			<a href="#/about">About us</a>
+			<a href="#/about">About us</a><br>
+			<hr>
+			<small>Nexark Studios, 2020 ©</small>
 		</div>
 
 		<!-- Page content -->
-		<div class="main">
+		<div class="main" style="background-color:#9baccc;">
 			
 			<!--Navbar-->
 			<nav role="navigation" class="navbar navbar-light bg-light navbar-expand-lg sticky" id="navbarSupportedContent">
@@ -138,9 +130,14 @@
 			<script type="text/ng-template" id="pages/home.html">
 
 				<h4>Welcome!</h4>
-				Feel free to click the links on the overhead bar or on the sidebar.
+				Feel free to click the links on the overhead bar or on the sidebar.<br><br>
+				<h5 style="font-style:italic;">An introduction</h5>
+				Nexark is a game development group which mostly develops games in HTML.
 				<br><br>
-				<small>Confused? Why not check out our games <a href="#/games">here</a></small>
+				<small>Confused? Why not check out our games <a href="#/games">here</a></small><br>			
+				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
+				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small><br>
+				<small>Or, head over to the chat section!</small>
 
 			</script>
 
@@ -148,8 +145,7 @@
 			<script type="text/ng-template" id="pages/about.html">
 
 				<h4>About us</h4>
-				Nexark is a group which makes small, fun HTML games and posts them on their website.<br>
-				We are also a community of developers and artists.
+				Nexark is HTML game development group. We develop simple, fun games.<br>
 				<br><br>
 				<iframe src="https://discord.com/widget?id=752090470087131236&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 				<br><br>
@@ -164,16 +160,16 @@
 
 				<h4>News & Information</h4>
 				Here you can find news and information about Nexark's games.<br>
-				Sometimes news is posted on the blog.
+				We recommend you join the discord server to stay updated on our games!
 				<hr>
 
-				<p>13/9/2020 - Sug Simulator & Random number game added.</p><br>
-				<p>14/9/2020 - Fighting simulator added.</p><br>
-				<p>16/9/2020 - GridIt added.</p><br>
-				<p>20/9/2020 - Added Nexark points!</p>
+				<div class="card"style="width: 20rem;">
+					<div class="card-body">
+						<p>26/9/2020 - Nexark website update.</p>
+					</div>
+				</div>
 
 				<hr>
-
 				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
 				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small><br>
 				<small>Or, head over to the chat section!</small>
@@ -188,32 +184,21 @@
 
 				<br><br>
 
-				<h6>Random Number Game</h6>
-				<p>Compete with a bot and see who scores the most! by Neo238</p>
-				<button onclick="redirect('https://random-number-game.bob8552.repl.co')">Play</button>
-
-				<br><br>
-
-				<h6>GridIt</h6>
-				<p>Find the correct square! by Neo238</p>
-				<button onclick="redirect('https://gridit.bob8552.repl.co/')">Play</button>
-
-				<br><br>
-
-				<h6>Fighting sim</h6>
-				<p>Fight at different difficulties! by Neo238</p>
-				<button onclick="redirect('https://fighting-game.bob8552.repl.co/')">Play</button>
-				
-				<br><br>
-				
-				<h6>Sug Simulator</h6>
-				<p>Research particles at a facility! by Neo238 and Drags890</p>
-				<button onclick="redirect('https://sug-simulator.bob8552.repl.run/')">Play</button>
+				<div class="card"style="width: 25rem;">
+					<div class="card-body">
+						<image style="float:right;"src="/images/succinc.png"></image>
+						<h6>Sug Simulator</h6>
+						<p>Research particles at a facility! by Neo238 and Drags890</p>
+						<button onclick="redirect('https://sug-simulator.bob8552.repl.run/')">Play</button>
+					</div>
+				</div>
 			
 			</script>
 
+			<!--Chat-->
 			<script type="text/ng-template" id="pages/chat.html">
-				<button onclick="startChat()" id="startct">Start chat</button>
+				<h5 style="font-style:italic;">The chat; talk with people on site!</h5><br>
+				<button onclick="startChat()" id="startct">Start chatting!</button>
 				<div id="message-container"></div><br>
 				<form id="send-container">
 					<input type="text" id="message-input">
@@ -233,7 +218,11 @@
 			</script>
 
 			<!--Make the view-->
-			<div ng-view></div>
+			<div class="card">
+				<div class="card-body">
+						<div ng-view></div>
+				</div>
+			</div>
 
 			<hr>
 			<footer><small>Nexark Studios © 2020</small></footer>

@@ -4,6 +4,12 @@ body { /* Font for whole website */
 
 }
 
+html { /* Website colour */
+
+	background-color: #9baccc;
+
+}
+
 button { /* Buttons */
 
   border: black;
