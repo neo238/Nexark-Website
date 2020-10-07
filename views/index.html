@@ -12,12 +12,12 @@
 		<meta property="og:site_name" content="Nexark">
 		<meta property="og:url" content="https://nexark.bob8552.repl.co/"> <!--URL must be changed-->
 		<meta property="og:title" content="Nexark website">
-		<meta property="og:description" content="Nexark is a group which makes small, fun HTML games and posts them on their website.">
+		<meta property="og:description" content="Nexark runs a social network where people can discuss coding and other things.">
 		<meta property="og:type" content="website">
 		<meta name="og:image" itemprop="image" content="/images/nexark.png">
 
 		<!--Title-->
-		<title>Nexark</title>
+		<title>Nexark Info Hub</title>
 
 		<!--Resources-->
 		<link rel="stylesheet" href="/style.css"></link>
@@ -53,6 +53,10 @@
 				$scope.Chat = "Chat";
 			});
 
+			app.controller("TOSController", function($scope) {
+				$scope.TOS = "TOS";
+			});
+
 			app.config(function($routeProvider) {
 
 				$routeProvider
@@ -77,9 +81,9 @@
 					controller  : 'NewsController'
 				})
 
-				.when('/chat', {
-					templateUrl : 'pages/chat.html',
-					controller  : 'ChatController'
+				.when('/TOS', {
+					templateUrl : 'pages/TOS.html',
+					controller  : 'TOSController'
 				})
 
 				.otherwise({redirectTo: '/'});
@@ -93,11 +97,11 @@
 
 		<!-- Side navigation -->
 		<div class="sidenav">
-			<a href="#/">Home</a>
+			<a href="#/">Home <image src="/images/HOME.png" width="30"></image></a>
 			<a href="#/games">Games <image src="/images/games.png" width="30"></image></a>
-			<a href="#/news">News</a>
-			<a href="#/chat">Chat</a>
-			<a href="#/about">About us</a><br>
+			<a href="#/news">News <image src="/images/news.png" width="30"></image></a>
+			<a href="#/TOS">Nexark Coven TOS <image src="/images/chat.png" width="30"></image></a>
+			<a href="#/about">About <image src="/images/aboutus.png" width="25"></image></a><br>
 			<hr>
 			<small>Nexark Studios, 2020 ©</small>
 		</div>
@@ -117,7 +121,7 @@
 				<!--Left entries-->
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav ml-auto">
-						<a class="nav-item nav-link" href="https://nexark-blog.bob8552.repl.co/">Blog</a>
+						<a class="nav-item nav-link" href="https://nexark-coven.tribe.so/">Nexark Coven</a>
 					</div>
 				</div>
 
@@ -132,12 +136,11 @@
 				<h4>Welcome!</h4>
 				Feel free to click the links on the overhead bar or on the sidebar.<br><br>
 				<h5 style="font-style:italic;">An introduction</h5>
-				Nexark is a game development group which mostly develops games in HTML.
+				Nexark runs a small social network where people can discuss and share development, coding, art and other related things. We also make HTML games.
 				<br><br>
 				<small>Confused? Why not check out our games <a href="#/games">here</a></small><br>			
 				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
-				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small><br>
-				<small>Or, head over to the chat section!</small>
+				<small>Check out nexark coven <a href="https://nexark-coven.tribe.so/">here</a></small>
 
 			</script>
 
@@ -145,34 +148,34 @@
 			<script type="text/ng-template" id="pages/about.html">
 
 				<h4>About us</h4>
-				Nexark is HTML game development group. We develop simple, fun games.<br>
+				Nexark runs a small social network where people can discuss and share development, coding, art and other related things. We also make HTML games.<br>
 				<br><br>
 				<iframe src="https://discord.com/widget?id=752090470087131236&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 				<br><br>
 				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
-				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small><br>
-				<small>Or, head over to the chat section!</small>
+				<small>Check out nexark coven <a href="https://nexark-coven.tribe.so/">here</a></small>
 
 			</script>
 
 			<!--News-->
 			<script type="text/ng-template" id="pages/news.html">
 
-				<h4>News & Information</h4>
-				Here you can find news and information about Nexark's games.<br>
-				We recommend you join the discord server to stay updated on our games!
+				<h4>News, Updates & Information</h4>
+				Here you can find news and information about the website.<br>
+				We recommend you join the discord server to stay updated on our games and nexark coven.
 				<hr>
 
-				<div class="card"style="width: 20rem;">
+				<div class="card"style="width: 18rem;">
 					<div class="card-body">
-						<p>26/9/2020 - Nexark website update.</p>
+						<p>26/9/2020 - Nexark website update.</p><br>
+						<small>The site was refurbished and new icons and colours were added.</small>
 					</div>
 				</div>
 
 				<hr>
+				<small>Confused? Why not check out our games <a href="#/games">here</a></small><br>			
 				<small>Want to speak to us? <a href="https://discord.gg/HwPceKs">Join us on discord!</a></small><br>
-				<small>Check out our blog <a href="https://nexark-blog.bob8552.repl.co/">here</a></small><br>
-				<small>Or, head over to the chat section!</small>
+				<small>Check out nexark coven <a href="https://nexark-coven.tribe.so/">here</a></small>
 
 			</script>
 
@@ -184,27 +187,23 @@
 
 				<br><br>
 
-				<div class="card"style="width: 25rem;">
+				<div class="card" style="width: 25rem;">
 					<div class="card-body">
 						<image style="float:right;"src="/images/succinc.png"></image>
 						<h6>Sug Simulator</h6>
 						<p>Research particles at a facility! by Neo238 and Drags890</p>
 						<button onclick="redirect('https://sug-simulator.bob8552.repl.run/')">Play</button>
 					</div>
+				</div><br>
+
+				<div class="card" style="width: 25rem;">
+					<div class="card-body">
+						<h6>New game!</h6>
+						<p>Coming soon...</p>
+						<button disabled="disabled">Play</button>
+					</div>
 				</div>
 			
-			</script>
-
-			<!--Chat-->
-			<script type="text/ng-template" id="pages/chat.html">
-				<h5 style="font-style:italic;">The chat; talk with people on site!</h5><br>
-				<button onclick="startChat()" id="startct">Start chatting!</button>
-				<div id="message-container"></div><br>
-				<form id="send-container">
-					<input type="text" id="message-input">
-					<button type="submit" id="send-button">Send</button><br><br>
-				</form>
-				<small style="font-style:italic;">Make sure your message and username is appropriate!</small>
 			</script>
 
 			<script type="text/ng-template" id="pages/points.html">
@@ -214,6 +213,31 @@
 
 				<p>Points</p>
 				<p id="points">{{ points || "0" }}</p>
+
+			</script>
+
+			<script type="text/ng-template" id="pages/TOS.html">
+
+				<h4>Nexark Coven TOS.</h4>
+				<p>Please read everything carefully before using our social site to avoid getting banned.</p><br>
+
+				<h6>Safety</h6>
+				<p>Please do not use swear words on the social site and please do not post or mention NSFW. Doxxing is also banned. If you are caught doxxing, you will be terminated. Fraud is also banned on our site.</p>
+
+				<h6>Reporting</h6>
+				<p>Please report all bad behaviour to us on the discord server, remember to include proof.</p>
+
+				<h6>Feedback and bugs</h6>
+				<p>If you have any suggestions, feedback or bugs, please send them to us in the discord server. If you are reporting a bug, remember to include proof.</p>
+
+				<h6>Raids</h6>
+				<p>If you raid our server or network, we have full rights to terminate you on our site, and ban you from our server.</p>
+
+				<h6>Rules when posting</h6>
+				<p>Please make sure your post dosen't break any rules above. Please think before you post and make sure your post is absolutely necessary. Do not spam posts, we recommend you post at a maximum of 3 times a day.</p>
+
+				<h4>Enforcement of rules</h4>
+				<p>Breaking the rules can get you suspended for a period of time, however repeatedly breaking the rules will get you permenantly deleted.</p>
 
 			</script>
 
